@@ -1,9 +1,12 @@
 [versions]
 spring-boot = "4.1.0"
 dependency-management = "1.1.7"
+checkstyle = "13.6.0"
+lombok = "1.18.46"
 
 [libraries]
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
