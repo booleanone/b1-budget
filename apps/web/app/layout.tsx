@@ -7,29 +7,29 @@ import { ThemeProvider } from "@/components/theme-provider";
 const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const fontMono = Geist_Mono({
-	subsets: ["latin"],
-	variable: "--font-mono",
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html
-			lang="en"
-			suppressHydrationWarning
-			className={cn(
-				"antialiased",
-				fontMono.variable,
-				"font-sans",
-				publicSans.variable,
-			)}
-		>
-			<body>
-				<ThemeProvider>{children}</ThemeProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        publicSans.variable,
+      )}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
 }

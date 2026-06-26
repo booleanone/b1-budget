@@ -1,21 +1,23 @@
 {
-	"name": "@booleanone/b1-budget",
-	"version": "0.0.1",
-	"private": true,
-	"license": "PROPRIETARY",
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"format": "turbo format",
-		"typecheck": "turbo typecheck"
-	},
-	"devDependencies": {
-		"@workspace/typescript-config": "workspace:*",
-		"turbo": "^2.10.0",
-		"typescript": "^6"
-	},
-	"packageManager": "pnpm@11.11.0",
-	"engines": {
-		"node": ">=24"
-	}
+  "name": "@booleanone/b1-budget",
+  "version": "0.0.1",
+  "private": true,
+  "license": "PROPRIETARY",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.1",
+    "@workspace/typescript-config": "workspace:*",
+    "turbo": "^2.10.0",
+    "typescript": "^6"
+  },
+  "packageManager": "pnpm@11.11.0",
+  "engines": {
+    "node": ">=24"
+  }
 }
