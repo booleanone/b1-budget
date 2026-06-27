@@ -1,0 +1,12 @@
+# Abort the commit as soon as any check fails.
+set -e
+
+pnpm check:fix
+pnpm typecheck
+
+# Java — Checkstyle (Google style, maxWarnings=0), only when Java/Gradle
+# sources are staged, so JS-only commits don't pay the JVM start-up cost.
+if git diff --cached --name-only --diff-filter=d \
+  | grep -qE '\.java$|\.gradle(\.kts)?$|(^|/)\.checkstyle/'; then
+  ./gradlew checkstyleMain checkstyleTest
+fi
